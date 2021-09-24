@@ -1,13 +1,18 @@
 ### Get all tasks
 GET http://localhost:3000/tasks
 
+
+### Get tasks with filter
+### query params: status, search
+GET http://localhost:3000/tasks?search=wash&status=IN_PROGRESS
+
 ### Create a task
 POST http://localhost:3000/tasks
 content-type: application/json
 
 {
-    "title": "wash the dog",
-    "description": "wash the dog and leave it very clean"
+    "title": "do the homework",
+    "description": "do my math homework"
 }
 
 ### Find specific task by its id
