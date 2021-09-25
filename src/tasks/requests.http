@@ -20,11 +20,11 @@ GET http://localhost:3000/tasks/215e5a27-0bad-4362-a234-cc7c8e458203
 
 
 ### Delete a task by its id
-DELETE http://localhost:3000/tasks/27164846-671e-42fb-a096-e4dabd06afdf
+DELETE http://localhost:3000/tasks/688bf642-7a7c-4b55-9c49-4a2511235324
 
 
 ### Update the status task given an id
-PATCH http://localhost:3000/tasks/1e7a8681-83ec-4a41-8dec-b0893dfc8855/status
+PATCH http://localhost:3000/tasks/1c307f16-9771-4bf6-a0b3-25f32b598420/status
 content-type: application/json
 
 {
