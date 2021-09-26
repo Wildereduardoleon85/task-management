@@ -4,7 +4,7 @@ GET http://localhost:3000/tasks
 
 ### Get tasks with filter
 ### query params: status, search
-GET http://localhost:3000/tasks?search=wash&status=IN_PROGRESS
+GET http://localhost:3000/tasks?search=play
 
 ### Create a task
 POST http://localhost:3000/tasks
