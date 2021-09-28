@@ -11,22 +11,21 @@ POST http://localhost:3000/tasks
 content-type: application/json
 
 {
-    "title": "walk around the dog",
-    "description": "go out with my dog and walk around"
+    "title": "clean my room",
+    "description": "clean an order my room"
 }
 
 ### Find specific task by its id
-GET http://localhost:3000/tasks/215e5a27-0bad-4362-a234-cc7c8e458203
+GET http://localhost:3000/tasks/a3d41cf2-4052-44eb-909e-57dcfb16f414
 
 
 ### Delete a task by its id
-DELETE http://localhost:3000/tasks/688bf642-7a7c-4b55-9c49-4a2511235324
-
+DELETE http://localhost:3000/tasks/a3d41cf2-4052-44eb-909e-57dcfb16f414
 
 ### Update the status task given an id
-PATCH http://localhost:3000/tasks/1c307f16-9771-4bf6-a0b3-25f32b598420/status
+PATCH http://localhost:3000/tasks/6ced135b-bb94-40ee-9ada-3b9925acb47c/status
 content-type: application/json
 
 {
-    "status": "OPEN"
+    "status": "DONE"
 }

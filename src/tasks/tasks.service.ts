@@ -13,29 +13,10 @@ export class TasksService {
     private tasksRepository: TasksRepository,
   ) {}
 
-  // private tasks: Task[] = [
-  //   {
-  //     id: '5d6c7576-696b-4dfb-9883-7dab1afc52bf',
-  //     description: 'wash the dog and leave it very clean',
-  //     title: 'wash the dog',
-  //     status: 'IN_PROGRESS',
-  //   },
-  //   {
-  //     id: '215e5a27-0bad-4362-a234-cc7c8e458203',
-  //     description: 'play the piano with my doughter',
-  //     title: 'play the piano',
-  //     status: 'OPEN',
-  //   },
-  //   {
-  //     id: 'ecd16f3b-5b57-4407-92b4-b42667822dba',
-  //     description: 'do my math homework',
-  //     title: 'do the homework',
-  //     status: 'OPEN',
-  //   },
-  // ];
   //  getAllTasks(): Task[] {
   //   return this.tasks;
   // }
+
   // getTasksWithFilters(filterDto: GetTasksFilterDto): Task[] {
   //   const { status, search } = filterDto;
   //   let tasks = this.getAllTasks();
@@ -52,17 +33,19 @@ export class TasksService {
   //   }
   //   return tasks;
   // }
-  // createTask(createTaskDto: CreateTaskDto): Task {
-  //   const { title, description } = createTaskDto;
-  //   const task: Task = {
-  //     id: uuid(),
-  //     description,
-  //     title,
-  //     status: TaskStatus.OPEN,
-  //   };
-  //   this.tasks.push(task);
-  //   return task;
-  // }
+
+  async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
+    const { title, description } = createTaskDto;
+
+    const task = this.tasksRepository.create({
+      title,
+      description,
+      status: TaskStatus.OPEN,
+    });
+
+    await this.tasksRepository.save(task);
+    return task;
+  }
 
   async getTasksById(id: string): Promise<Task> {
     const found = await this.tasksRepository.findOne(id);
@@ -72,20 +55,18 @@ export class TasksService {
     return found;
   }
 
-  // findTaskById(id: string): Task {
-  //   const found = this.tasks.find((task) => task.id === id);
-  //   if (!found) {
-  //     throw new NotFoundException(`Task with id: ${id} does not exists`);
-  //   }
-  //   return found;
-  // }
-  // deleteTask(id: string): void {
-  //   const found = this.findTaskById(id);
-  //   this.tasks = this.tasks.filter((task) => task.id !== found.id);
-  // }
-  // updateTaskStatus(id: string, status: TaskStatus): Task {
-  //   const task = this.findTaskById(id);
-  //   task.status = status;
-  //   return task;
-  // }
+  async deleteTask(id: string): Promise<void> {
+    const result = await this.tasksRepository.delete(id);
+    if (result.affected === 0) {
+      throw new NotFoundException(`Task with id: ${id} does not exists`);
+    }
+  }
+
+  async updateTaskStatus(id: string, status: TaskStatus): Promise<Task> {
+    const task = await this.getTasksById(id);
+    task.status = status;
+
+    await this.tasksRepository.save(task);
+    return task;
+  }
 }
