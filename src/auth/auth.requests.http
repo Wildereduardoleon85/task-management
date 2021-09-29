@@ -6,3 +6,13 @@ content-type: application/json
     "username": "antonio",
     "password": "12345678wW*"
 }
+
+
+### Sign In
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+    "username": "antonio",
+    "password": "12345678wW*"
+}
