@@ -1,3 +1,5 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudG9uaW8iLCJpYXQiOjE2MzI5NDY5NzYsImV4cCI6MTYzMjk1MDU3Nn0.FQnTO0KxWVSE0N0W7z7t9g0R8fPSr_oGntqDSwYzCqk
+
 ### Get all tasks
 GET http://localhost:3000/tasks
 
@@ -9,11 +11,12 @@ GET http://localhost:3000/tasks?search=wALk
 
 ### Create a task
 POST http://localhost:3000/tasks
-content-type: application/json
+Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-    "title": "clean my room",
-    "description": "clean an order my room"
+    "title": "clean my room again",
+    "description": "clean an order my room again"
 }
 
 
@@ -23,7 +26,7 @@ GET http://localhost:3000/tasks/a3d41cf2-4052-44eb-909e-57dcfb16f414
 
 
 ### Delete a task by its id
-DELETE http://localhost:3000/tasks/a3d41cf2-4052-44eb-909e-57dcfb16f414
+DELETE http://localhost:3000/tasks/2793063c-79ab-4359-9b52-c16048a2113d
 
 
 ### Update the status task given an id
