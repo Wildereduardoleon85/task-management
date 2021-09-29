@@ -1,0 +1,8 @@
+### Sign Up
+POST http://localhost:3000/auth/signup
+content-type: application/json
+
+{
+    "username": "antonio-josé",
+    "password": "123456"
+}
