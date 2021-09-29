@@ -1,4 +1,4 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudG9uaW8iLCJpYXQiOjE2MzI5NTE2MTEsImV4cCI6MTYzMjk1NTIxMX0.RWnKUbr9HjBB6fB8mu4bv9_jmNjf3lidKzWnKbmqEGQ
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudG9uaW8iLCJpYXQiOjE2MzI5NTM2MzUsImV4cCI6MTYzMjk1NzIzNX0.GAU6eJFBbe6Ov-LShKd-44jEw9ZnzaX8OyVO7UJ7t5Y
 
 ### Get all tasks
 GET http://localhost:3000/tasks
@@ -26,7 +26,7 @@ Authorization: Bearer {{token}}
 
 
 ### Delete a task by its id
-DELETE http://localhost:3000/tasks/b927e6b7-98b6-4e1e-83e4-e609aa0b4357
+DELETE http://localhost:3000/tasks/97053b72-deb4-4489-ac19-46193280eaac
 Authorization: Bearer {{token}}
 
 ### Update the status task given an id
