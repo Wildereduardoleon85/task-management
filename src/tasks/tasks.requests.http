@@ -1,4 +1,5 @@
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudG9uaW8iLCJpYXQiOjE2MzI5NTM2MzUsImV4cCI6MTYzMjk1NzIzNX0.GAU6eJFBbe6Ov-LShKd-44jEw9ZnzaX8OyVO7UJ7t5Y
+@token1 = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFudG9uaW8iLCJpYXQiOjE2MzMxMTYwNzMsImV4cCI6MTYzMzExOTY3M30.f9t4CG7Y5n_dGecLUsXvW0TFMOj7NBKKj1YygxaA2qM
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InVzZXIyIiwiaWF0IjoxNjMzMTE2Njg2LCJleHAiOjE2MzMxMjAyODZ9.9JJc8DFQmempJR-bShrsuAFbXJUJZRqJ1G3QV8bTGJo
 
 ### Get all tasks
 GET http://localhost:3000/tasks
@@ -15,8 +16,8 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-    "title": "clean my room again",
-    "description": "clean an order my room again"
+    "title": "i am the user 2",
+    "description": "play the guitar"
 }
 
 
@@ -26,7 +27,7 @@ Authorization: Bearer {{token}}
 
 
 ### Delete a task by its id
-DELETE http://localhost:3000/tasks/97053b72-deb4-4489-ac19-46193280eaac
+DELETE http://localhost:3000/tasks/200b3e62-b1a8-4a8f-b5e8-e3e413423e43
 Authorization: Bearer {{token}}
 
 ### Update the status task given an id
